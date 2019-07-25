@@ -1,0 +1,14 @@
+
+<ion-slides  [options]='slideOpts'  >
+    <ion-slide *ngFor="let pelicula of peliculasRecientes|filtroImagen"  >
+      <ion-card  
+        
+      (click)="verDetalle(pelicula.id)" >
+        
+          <img [src]='pelicula.backdrop_path | image' >
+          <!-- imagen es el nombre dado en el archoivo Pipe -->
+
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+   

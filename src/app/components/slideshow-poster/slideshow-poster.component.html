@@ -1,0 +1,11 @@
+<ion-slides  [options]='slideOpts'  mode="ios"  scrollbar="ios">
+    <ion-slide *ngFor="let pelicula of peliculasRecientes"  >
+      <ion-card  mode='md' (click)="verDetalle(pelicula.id)">
+        
+          <img class='poster'  [src]='pelicula.poster_path | image' >
+          <!-- imagen es el nombre dado en el archoivo Pipe -->
+
+      </ion-card>
+    </ion-slide>
+  </ion-slides> 
+   

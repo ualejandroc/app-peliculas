@@ -1,0 +1,36 @@
+<ion-slides  [options]='slideOpts'  mode="ios"  >
+    <ion-slide *ngFor="let pares of peliculasRecientes | pares"  >
+
+     
+        <ion-row>
+          <ion-col size="12"  *ngFor="let pelicula of pares" >
+       <ion-card  mode='ios' (click)="verDetalle(pelicula.id)">
+        
+          <img class='poster' [src]='pelicula.poster_path | image' >
+          <!-- imagen es el nombre dado en el archoivo Pipe -->
+ 
+      </ion-card>
+
+          </ion-col>
+
+         
+         
+        </ion-row>
+     
+
+      
+    </ion-slide>
+
+    <ion-slide class="slide-mas" >
+        <ion-button
+        class="btn-mas" 
+        expand='full' 
+        size='large' 
+        (click)="cargar()">
+    <ion-icon name='add' slot='icon-only'></ion-icon>
+    
+    </ion-button>
+    </ion-slide>
+
+  </ion-slides>
+   
